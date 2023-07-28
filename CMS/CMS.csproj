@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A24D92C1-0868-4F52-81B1-3883E78C9FA8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CMS</RootNamespace>
+    <AssemblyName>CMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>48B385C3BB76118F2E4A210547526AF5CBBB1855</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.1.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.2.7\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addresident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addresident.Designer.cs">
+      <DependentUpon>Addresident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cabentry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cabentry.Designer.cs">
+      <DependentUpon>cabentry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="complaint_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="complaint_list.Designer.cs">
+      <DependentUpon>complaint_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="comp_resi_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comp_resi_frm.Designer.cs">
+      <DependentUpon>comp_resi_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="covidupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="covidupdate.Designer.cs">
+      <DependentUpon>covidupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="covid_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="covid_frm.Designer.cs">
+      <DependentUpon>covid_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addmaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addmaid.Designer.cs">
+      <DependentUpon>addmaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maid_list_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maid_list_view.Designer.cs">
+      <DependentUpon>maid_list_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myprofile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myprofile.Designer.cs">
+      <DependentUpon>myprofile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="notice_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notice_view.Designer.cs">
+      <DependentUpon>notice_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="pwdchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pwdchange.Designer.cs">
+      <DependentUpon>pwdchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resident_lst_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resident_lst_view.Designer.cs">
+      <DependentUpon>resident_lst_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="servicevendor_entry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="servicevendor_entry.Designer.cs">
+      <DependentUpon>servicevendor_entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maidentry_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maidentry_frm.Designer.cs">
+      <DependentUpon>maidentry_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deliv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deliv.Designer.cs">
+      <DependentUpon>deliv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="guest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="guest.Designer.cs">
+      <DependentUpon>guest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sp_list_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sp_list_view.Designer.cs">
+      <DependentUpon>sp_list_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="twowheeler_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="twowheeler_form.Designer.cs">
+      <DependentUpon>twowheeler_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cms.cs" />
+    <Compile Include="adminpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminpage.Designer.cs">
+      <DependentUpon>adminpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoicelist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invoicelist.Designer.cs">
+      <DependentUpon>invoicelist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoicelist1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invoicelist1.Designer.cs">
+      <DependentUpon>invoicelist1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maintbill_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maintbill_form.Designer.cs">
+      <DependentUpon>maintbill_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prev_posts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prev_posts.Designer.cs">
+      <DependentUpon>prev_posts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="residentpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="residentpage.Designer.cs">
+      <DependentUpon>residentpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="guard_page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="guard_page.Designer.cs">
+      <DependentUpon>guard_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="flatlist_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="flatlist_form.Designer.cs">
+      <DependentUpon>flatlist_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sec_guard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sec_guard.Designer.cs">
+      <DependentUpon>sec_guard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addnewflat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addnewflat.Designer.cs">
+      <DependentUpon>addnewflat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maid_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maid_details.Designer.cs">
+      <DependentUpon>maid_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="complaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="complaint.Designer.cs">
+      <DependentUpon>complaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="noticeboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="noticeboard.Designer.cs">
+      <DependentUpon>noticeboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainstaff_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainstaff_frm.Designer.cs">
+      <DependentUpon>mainstaff_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ser_vendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ser_vendor.Designer.cs">
+      <DependentUpon>ser_vendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginpage.Designer.cs">
+      <DependentUpon>loginpage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="parkingpass_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="parkingpass_form.Designer.cs">
+      <DependentUpon>parkingpass_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resi_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resi_list.Designer.cs">
+      <DependentUpon>resi_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vehicle.Designer.cs">
+      <DependentUpon>vehicle.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Addresident.resx">
+      <DependentUpon>Addresident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cabentry.resx">
+      <DependentUpon>cabentry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="complaint_list.resx">
+      <DependentUpon>complaint_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comp_resi_frm.resx">
+      <DependentUpon>comp_resi_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="covidupdate.resx">
+      <DependentUpon>covidupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="covid_frm.resx">
+      <DependentUpon>covid_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addmaid.resx">
+      <DependentUpon>addmaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maid_list_view.resx">
+      <DependentUpon>maid_list_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myprofile.resx">
+      <DependentUpon>myprofile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notice_view.resx">
+      <DependentUpon>notice_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pwdchange.resx">
+      <DependentUpon>pwdchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resident_lst_view.resx">
+      <DependentUpon>resident_lst_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="servicevendor_entry.resx">
+      <DependentUpon>servicevendor_entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maidentry_frm.resx">
+      <DependentUpon>maidentry_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deliv.resx">
+      <DependentUpon>deliv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="guest.resx">
+      <DependentUpon>guest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sp_list_view.resx">
+      <DependentUpon>sp_list_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="twowheeler_form.resx">
+      <DependentUpon>twowheeler_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminpage.resx">
+      <DependentUpon>adminpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoicelist.resx">
+      <DependentUpon>invoicelist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoicelist1.resx">
+      <DependentUpon>invoicelist1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maintbill_form.resx">
+      <DependentUpon>maintbill_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prev_posts.resx">
+      <DependentUpon>prev_posts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="residentpage.resx">
+      <DependentUpon>residentpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="guard_page.resx">
+      <DependentUpon>guard_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="flatlist_form.resx">
+      <DependentUpon>flatlist_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sec_guard.resx">
+      <DependentUpon>sec_guard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addnewflat.resx">
+      <DependentUpon>addnewflat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maid_details.resx">
+      <DependentUpon>maid_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="complaint.resx">
+      <DependentUpon>complaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="noticeboard.resx">
+      <DependentUpon>noticeboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainstaff_frm.resx">
+      <DependentUpon>mainstaff_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ser_vendor.resx">
+      <DependentUpon>ser_vendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginpage.resx">
+      <DependentUpon>loginpage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parkingpass_form.resx">
+      <DependentUpon>parkingpass_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resi_list.resx">
+      <DependentUpon>resi_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vehicle.resx">
+      <DependentUpon>vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CMS_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_520583.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profile-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926007760s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door-gentleman-invite-inviting-man-opening-welcome-icon-man-opening-door-png-512_390.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUEST.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MOP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images - 2021-05-04T131131.470.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_5205831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_5205832.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2838%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpass1.png" />
+    <None Include="Resources\Screenshot 2021-05-22 033256.png" />
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taxi_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SP_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CMS5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CMS4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_icon %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minibt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minibt.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CMSS13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CM2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CM3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CMM3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CMPRO3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSEBLACK.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MINIBLACK.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MINIBT1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
